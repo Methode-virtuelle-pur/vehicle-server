@@ -4,11 +4,19 @@ on:
 jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
-    container:
-      image: ghcr.io/cicd-lectures/gitpod:latest
-      options: --user=root
     steps:
       - name: nimporte quoi 
         uses: actions/checkout@v4
       - run: echo "Bonjour 👋"        
       - run: cat README.md | cowsay
+      
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Read README 
+        id: README
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./REAME.md
+      - uses: Code-Hex/neo-cowsay-action@v1
+        with:
+          message: ${{ steps.README.outputs.content }}
