@@ -4,10 +4,11 @@ on:
 jobs:
   dire_bonjour:
     runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/cicd-lectures/gitpod:latest
+      options: --user=root
     steps:
       - name: nimporte quoi 
         uses: actions/checkout@v4
-      - run: echo "Bonjour 👋"
-      - run: sudo apt-get update
-      - run: sudo apt-get install -y cowsay          
+      - run: echo "Bonjour 👋"        
       - run: cat README.md | cowsay
