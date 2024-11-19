@@ -13,7 +13,6 @@ jobs:
         with:
           node-version: 20.17
 
-      - name : mpm run 
-        uses: npm ci
-
+      - run : npm run 
+      - run : npm ci
       - run: npm test
