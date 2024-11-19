@@ -19,7 +19,7 @@ Then, in another terminal start the server
 
 ```bash
 node dist/index.js
-```
+```cd
 
 ### Test plan
 
