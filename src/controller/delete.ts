@@ -10,13 +10,8 @@ export class DeleteVehicleController {
 
   public async handle(req: Request<Parameters>, res: Response): Promise<void> {
     const temp ={id:parseInt(req.params.id)};
-    try{
-      await  this.vehicleStore.deleteVehicle(temp);
-    }catch(error) {
-    
-      res.status(500).send();
-  }
-  res.status(200).send();
+    await  this.vehicleStore.deleteVehicle(temp);
+    res.status(200).send();
   }
 }
 
