@@ -1,6 +1,7 @@
 name: CI
 on:
   - push
+  - workflow_call
 jobs:
   code_GitHub:
     runs-on: ubuntu-22.04
