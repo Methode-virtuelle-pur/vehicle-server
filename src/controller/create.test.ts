@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/require-await, @typescript-eslint/no-unsafe-argument */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 
 import {expect, jest, test} from '@jest/globals';
 import { Pool } from 'pg';
@@ -8,7 +8,7 @@ import { FakeResponse } from "../fake/response";
 import { CreateVehicleController } from "./create";
 import { Vehicle } from "../model/vehicle";
 import { VehicleStore } from "../store/vehicle";
-import { AppError, ErrorCode } from "../errors";
+
 
 // On définit ici un module `Mock` ie: tout chargement du module `import { VehicleStore } from "../store/vehicle'`
 // retournera une """fausse""" implémentation qui  n'intéragit pas avec la base de données.
